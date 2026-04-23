@@ -1,28 +1,29 @@
 # Lab 16 Benchmark Report
 
 ## Metadata
-- Dataset: hotpot_mini.json
+- Dataset: hotpot.json
 - Mode: real
-- Records: 16
+- Records: 200
 - Agents: react, reflexion
 
 ## Summary
 | Metric | ReAct | Reflexion | Delta |
 |---|---:|---:|---:|
-| EM | 0.75 | 1.0 | 0.25 |
-| Avg attempts | 1 | 1.125 | 0.125 |
-| Avg token estimate | 184 | 217 | 33 |
-| Avg latency (ms) | 3867.75 | 3945.25 | 77.5 |
+| EM | 0.2 | 0.59 | 0.39 |
+| Avg attempts | 1 | 2.27 | 1.27 |
+| Avg token estimate | 1531.75 | 3570.9 | 2039.15 |
+| Avg latency (ms) | 3762.07 | 9921.24 | 6159.17 |
 
 ## Failure modes
 ```json
 {
   "react": {
-    "none": 6,
-    "entity_drift": 2
+    "wrong_final_answer": 80,
+    "none": 20
   },
   "reflexion": {
-    "none": 8
+    "wrong_final_answer": 41,
+    "none": 59
   }
 }
 ```

@@ -1,8 +1,8 @@
 {
   "meta": {
-    "dataset": "hotpot_mini.json",
+    "dataset": "hotpot.json",
     "mode": "real",
-    "num_records": 16,
+    "num_records": 200,
     "agents": [
       "react",
       "reflexion"
@@ -10,195 +10,2036 @@
   },
   "summary": {
     "react": {
-      "count": 8,
-      "em": 0.75,
+      "count": 100,
+      "em": 0.2,
       "avg_attempts": 1,
-      "avg_token_estimate": 184,
-      "avg_latency_ms": 3867.75
+      "avg_token_estimate": 1531.75,
+      "avg_latency_ms": 3762.07
     },
     "reflexion": {
-      "count": 8,
-      "em": 1.0,
-      "avg_attempts": 1.125,
-      "avg_token_estimate": 217,
-      "avg_latency_ms": 3945.25
+      "count": 100,
+      "em": 0.59,
+      "avg_attempts": 2.27,
+      "avg_token_estimate": 3570.9,
+      "avg_latency_ms": 9921.24
     },
     "delta_reflexion_minus_react": {
-      "em_abs": 0.25,
-      "attempts_abs": 0.125,
-      "tokens_abs": 33,
-      "latency_abs": 77.5
+      "em_abs": 0.39,
+      "attempts_abs": 1.27,
+      "tokens_abs": 2039.15,
+      "latency_abs": 6159.17
     }
   },
   "failure_modes": {
     "react": {
-      "none": 6,
-      "entity_drift": 2
+      "wrong_final_answer": 80,
+      "none": 20
     },
     "reflexion": {
-      "none": 8
+      "wrong_final_answer": 41,
+      "none": 59
     }
   },
   "examples": [
     {
-      "qid": "hp1",
+      "qid": "hotpot_3687",
       "agent_type": "react",
-      "gold_answer": "Oxford University",
-      "predicted_answer": "Oxford University.",
-      "is_correct": true,
-      "attempts": 1,
-      "failure_mode": "none",
-      "reflection_count": 0
-    },
-    {
-      "qid": "hp2",
-      "agent_type": "react",
-      "gold_answer": "River Thames",
-      "predicted_answer": "The River Thames.",
-      "is_correct": true,
-      "attempts": 1,
-      "failure_mode": "none",
-      "reflection_count": 0
-    },
-    {
-      "qid": "hp3",
-      "agent_type": "react",
-      "gold_answer": "violin",
-      "predicted_answer": "The violin, as Antonio Vivaldi was a virtuoso violinist.",
-      "is_correct": true,
-      "attempts": 1,
-      "failure_mode": "none",
-      "reflection_count": 0
-    },
-    {
-      "qid": "hp4",
-      "agent_type": "react",
-      "gold_answer": "Pacific Ocean",
-      "predicted_answer": "The Pacific Ocean borders the country whose capital is Lima, which is Peru.",
-      "is_correct": true,
-      "attempts": 1,
-      "failure_mode": "none",
-      "reflection_count": 0
-    },
-    {
-      "qid": "hp5",
-      "agent_type": "react",
-      "gold_answer": "mathematics",
-      "predicted_answer": "Based on the provided context, it is stated that the person who formulated the laws of motion was also a \"physicist and mathematician.\" Therefore, I can infer that they studied mathematics in addition to physics.",
-      "is_correct": true,
-      "attempts": 1,
-      "failure_mode": "none",
-      "reflection_count": 0
-    },
-    {
-      "qid": "hp6",
-      "agent_type": "react",
-      "gold_answer": "Dead Sea",
-      "predicted_answer": "The Dead Sea borders Jordan, so it must border the country where Petra is located.",
+      "gold_answer": "Beyond the Clouds",
+      "predicted_answer": "There is no information in the provided context that suggests actress Irene Jacob completed a movie before the film \"U.S. Marshals\". The relevant text mentions the 1998 American action crime thriller film directed by Stuart Baird, which stars Robert Downey Jr., Wesley Snipes, Tommy Lee Jones, and Gary Busey.",
       "is_correct": false,
       "attempts": 1,
-      "failure_mode": "entity_drift",
+      "failure_mode": "wrong_final_answer",
       "reflection_count": 0
     },
     {
-      "qid": "hp7",
+      "qid": "hotpot_3893",
       "agent_type": "react",
-      "gold_answer": "Romance",
-      "predicted_answer": "The primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "gold_answer": "James Searle Dawley",
+      "predicted_answer": "Lionel Ngakane was from South Africa.",
       "is_correct": true,
       "attempts": 1,
       "failure_mode": "none",
       "reflection_count": 0
     },
     {
-      "qid": "hp8",
+      "qid": "hotpot_3398",
       "agent_type": "react",
-      "gold_answer": "Himalayas",
-      "predicted_answer": "The Himalayas contain the highest mountain in Nepal, which is also part of Mount Everest, located within Kathmandu's country.",
+      "gold_answer": "no",
+      "predicted_answer": "There is no information in the provided context that suggests Jason Bateman's nationality or connection to India, where K. Subash (Suresh Krishnan) is from. Therefore, I cannot answer whether they are from the same country based on this context.",
       "is_correct": false,
       "attempts": 1,
-      "failure_mode": "entity_drift",
+      "failure_mode": "wrong_final_answer",
       "reflection_count": 0
     },
     {
-      "qid": "hp1",
-      "agent_type": "reflexion",
-      "gold_answer": "Oxford University",
-      "predicted_answer": "Oxford University.",
+      "qid": "hotpot_6595",
+      "agent_type": "react",
+      "gold_answer": "youngest person to become a national transgender figure",
+      "predicted_answer": "Based on the provided context, I cannot answer your question about whether the book \"I Am Jazz\" by Jessica Herthel (not to be confused with the 2015 TV series) attracts people primarily because of their transgender identity.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_6642",
+      "agent_type": "react",
+      "gold_answer": "Gaelic",
+      "predicted_answer": "There is no mention of the Norse-Gaels language emerging from the intermarriage of Norsemen with another ethnic group in the provided context. The Norse-Gaels were a people of mixed Gaelic and Norse ancestry and culture, who emerged in the Viking Age. They are not related to the Norsemen.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3400",
+      "agent_type": "react",
+      "gold_answer": "emotionally troubled women",
+      "predicted_answer": "There is no mention of Julianne Moore's role in the 2002 Oscar-winning movie \"The Hours\". The answer to your original question, which you did not ask about, was simply that she did not play a starring role in \"The Hours\" (1998), as mentioned in her own filmography.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_35",
+      "agent_type": "react",
+      "gold_answer": "October 1922",
+      "predicted_answer": "Based on the provided context, Alexander Kerensky was defeated and destroyed by the Bolsheviks during the Russian Civil War, which ended with the Bolshevik victory in 1923.",
       "is_correct": true,
       "attempts": 1,
       "failure_mode": "none",
       "reflection_count": 0
     },
     {
-      "qid": "hp2",
-      "agent_type": "reflexion",
-      "gold_answer": "River Thames",
-      "predicted_answer": "The River Thames flows through London, where Ada Lovelace was born.",
+      "qid": "hotpot_579",
+      "agent_type": "react",
+      "gold_answer": "Coyote Ugly",
+      "predicted_answer": "The answer to the question is not explicitly stated in the provided context. However, based on the information that \"Can't Fight the Moonlight\" was used as the theme song for the film \"Coyote Ugly\", it can be inferred that the album \"The Best of LeAnn Rimes\" does contain this song.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3656",
+      "agent_type": "react",
+      "gold_answer": "Vilnius Old Town",
+      "predicted_answer": "The answer to the question is not explicitly stated in the provided context. However, based on the information about the different locations mentioned, it can be inferred that one of these places might have a cathedral similar or identical to the Vilnius Cathedral.\n\nAmong the options, the most likely candidate would be Nidaros Cathedral (St. Olav's Cathedral) located in Trondheim, Norway.",
       "is_correct": true,
       "attempts": 1,
       "failure_mode": "none",
       "reflection_count": 0
     },
     {
-      "qid": "hp3",
-      "agent_type": "reflexion",
-      "gold_answer": "violin",
-      "predicted_answer": "The instrument mentioned in the context that is associated with the composer is the violin, indicating that it was likely the primary instrument he played.",
+      "qid": "hotpot_6916",
+      "agent_type": "react",
+      "gold_answer": "a pair of dice",
+      "predicted_answer": "The term \"snake eyes\" is used in Craps, a dice game.",
       "is_correct": true,
       "attempts": 1,
       "failure_mode": "none",
       "reflection_count": 0
     },
     {
-      "qid": "hp4",
-      "agent_type": "reflexion",
-      "gold_answer": "Pacific Ocean",
-      "predicted_answer": "The Pacific Ocean borders Peru, and Lima is the capital of Peru. Therefore, the Pacific Ocean borders the country whose capital is Lima.",
+      "qid": "hotpot_3336",
+      "agent_type": "react",
+      "gold_answer": "Presbyterian University College",
+      "predicted_answer": "There is no information provided about a university named \"Presbyterian University College\" within the given context. However, I can tell you that the University of Arizona was founded in 1885, not 2003. Therefore, it cannot be considered as one of the options for your question.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5123",
+      "agent_type": "react",
+      "gold_answer": "House of Habsburg-Lorraine",
+      "predicted_answer": "Ferdinand Zvonimir von Habsburg is the eldest son of Karl von Habsburg, the head of the House of Habsburg-Lorraine.",
       "is_correct": true,
       "attempts": 1,
       "failure_mode": "none",
       "reflection_count": 0
     },
     {
-      "qid": "hp5",
-      "agent_type": "reflexion",
-      "gold_answer": "mathematics",
-      "predicted_answer": "Based on the provided context, it is mentioned that the person who formulated the laws of motion was also a \"physicist and mathematician\". Therefore, I can infer that the field they studied in addition to physics is mathematics.",
+      "qid": "hotpot_6747",
+      "agent_type": "react",
+      "gold_answer": "37",
+      "predicted_answer": "The director of Wise Blood was not mentioned in the provided context.",
       "is_correct": true,
       "attempts": 1,
       "failure_mode": "none",
       "reflection_count": 0
     },
     {
-      "qid": "hp6",
-      "agent_type": "reflexion",
-      "gold_answer": "Dead Sea",
-      "predicted_answer": "Petra is located in Jordan, which borders the Dead Sea to the west. Therefore, the Dead Sea borders the country where Petra is located.",
+      "qid": "hotpot_2275",
+      "agent_type": "react",
+      "gold_answer": "A1 Recordings",
+      "predicted_answer": "The answer is not explicitly stated in the provided context for the album \"Used to This\" by Future, but it can be inferred that it was included on the streaming version of his album released in 2017.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1183",
+      "agent_type": "react",
+      "gold_answer": "Rockstar San Diego",
+      "predicted_answer": "Paul DeBoy is known for appearances in the \"Red Dead Redemption\" series, specifically as Jimmy Saint in Red Dead Redemption.",
       "is_correct": true,
       "attempts": 1,
       "failure_mode": "none",
       "reflection_count": 0
     },
     {
-      "qid": "hp7",
-      "agent_type": "reflexion",
-      "gold_answer": "Romance",
-      "predicted_answer": "The primary language of Brazil belongs to the Romance language family, as stated in the context.",
+      "qid": "hotpot_5415",
+      "agent_type": "react",
+      "gold_answer": "Australian women's national soccer team",
+      "predicted_answer": "The answer to the question is not directly stated in the provided context, but based on general knowledge about Australian soccer teams, the \"unofficial national anthem\" of Australia could refer to the Matildas (Australian women's national soccer team), which has a nickname of \"the Matildas\", derived from an Australian folk song \"Waltzing Matilda\".",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2837",
+      "agent_type": "react",
+      "gold_answer": "URO VAMTAC",
+      "predicted_answer": "The Vehicle that is most like the four-wheel drive military light truck produced by AM General is not specifically mentioned in the given context. However, the \"URO VAMTAC\" seems to be a reference to a similar vehicle, as it is described as having several configurations.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_4960",
+      "agent_type": "react",
+      "gold_answer": "African ancestry or Afro-Caribbean",
+      "predicted_answer": "There is no mention in the provided context of how French people refer to \"banlieues\". The term \"banlieue\" refers to the suburbs or outer districts of France, which does not appear to be a specific ethnic reference in this context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3903",
+      "agent_type": "react",
+      "gold_answer": "video game",
+      "predicted_answer": "There is no information about Media Go or its content being associated with either Hot Pixel or the Sony PlayStation Portable in the provided context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2366",
+      "agent_type": "react",
+      "gold_answer": "yes",
+      "predicted_answer": "Yes, both Daniel Mann and Todd Solondz were directors mentioned in the provided context.",
       "is_correct": true,
       "attempts": 1,
       "failure_mode": "none",
       "reflection_count": 0
     },
     {
-      "qid": "hp8",
+      "qid": "hotpot_2553",
+      "agent_type": "react",
+      "gold_answer": "1844",
+      "predicted_answer": "Based on the provided context, there is no specific information about an early consumer co-operative that the 2012 British biographical feature film \"The Rochdale Pioneers\" tells the story of.\n\nHowever, it is mentioned in the context that:\n\n* The Rochdale Pioneers (the biographical feature film) was released in 2012.\n* A similar company, Penrith Co-operative Society, was formed in 1890 and operated as a consumer co-operative until its merger with Scotmid in 2009.\n\nIt is likely that the film \"The Rochdale Pioneers\" tells the story of this Penrith Co-operative Society, but no further information is provided.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_7202",
+      "agent_type": "react",
+      "gold_answer": "centre-back",
+      "predicted_answer": "Based on the provided context, there is no mention of a \"First Vice Captain\" of Juventus. However, it is mentioned that Claudio Marchisio is the second vice-captain of Juventus.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_7121",
+      "agent_type": "react",
+      "gold_answer": "Agra",
+      "predicted_answer": "There is no mention in the provided context of the Taj Mahal being commissioned as a capital. However, it is mentioned that when Shah Jahan built the Taj Mahal, his third wife Mumtaz Mahal died due to throat cancer, and her funeral was held at Agra Fort (not the Taj Mahal).",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_910",
+      "agent_type": "react",
+      "gold_answer": "hardcore",
+      "predicted_answer": "Unfortunately, the context does not provide information about the artists who influenced DJ Scotch Egg's \"Scotch Hausen\" album. The provided text discusses various aspects of electronic dance music genres such as hardcore techno, MFS label, Encyclopedia of Hardcore Chiptune, Power noise, Rave, and Breakcore, but it does not mention a specific work by an artist that inspired Scotch Hausen.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1377",
+      "agent_type": "react",
+      "gold_answer": "The Panther",
+      "predicted_answer": "The German medium tank, sometimes called the \"Mark V\", that was deployed on the Eastern and Western fronts from mid-1943 provided the armor and suspension for the chassis of the Panther tank destroyer built by Nazi Germany during World War II.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_4657",
+      "agent_type": "react",
+      "gold_answer": "Prussia",
+      "predicted_answer": "SMS \"Emden\" did not mount an Iron Cross on her stem-head. According to the provided context, it was actually SMS \"Dresden\", which was laid down in 1906, that mounted an Iron Cross on its stem-head in honor of the earlier \"Emden\".",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2477",
+      "agent_type": "react",
+      "gold_answer": "Italy",
+      "predicted_answer": "Based on the provided context, Brindisi is a city located in Italy.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_767",
+      "agent_type": "react",
+      "gold_answer": "Ride a Wild Pony",
+      "predicted_answer": "Disney produced \"Ride a Wild Pony\" first, in 1975. There is no mention of \"The Many Adventures of Winnie the Pooh\" being produced before \"Ride a Wild Pony\".",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3041",
+      "agent_type": "react",
+      "gold_answer": "director",
+      "predicted_answer": "Based on the provided context, neither Jim Sharman nor Ava DuVernay are mentioned as sharing a title concerning their actions leading actors in film or stage. They are both directors and producers with separate works and accolades.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3619",
+      "agent_type": "react",
+      "gold_answer": "German",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nDavid Hilbert",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5119",
+      "agent_type": "react",
+      "gold_answer": "Eliezer \"Elie\" Wiesel KBE",
+      "predicted_answer": "Based on the provided context, Elisha Wiesel is not mentioned as having a wider scope of profession than Pete Dexter.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1461",
+      "agent_type": "react",
+      "gold_answer": "86,112",
+      "predicted_answer": "The capacity of the Gaylord Family Oklahoma Memorial Stadium, which hosts games of the Oklahoma Sooners football team under head coach Barry Switzer in 1981, is 86,112.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_6962",
+      "agent_type": "react",
+      "gold_answer": "Kim Sung-su",
+      "predicted_answer": "The answer to your question cannot be determined with sufficient information from the provided context, as it does not mention the director of the 2001 film featuring Yu Rongguang.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1456",
+      "agent_type": "react",
+      "gold_answer": "Mako",
+      "predicted_answer": "TMNT (video game) is a single-player action-adventure multi-platform action game starring the Teenage Mutant Ninja Turtles, but it was not released three days before the actual movie's release.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2797",
+      "agent_type": "react",
+      "gold_answer": "Encore Las Vegas",
+      "predicted_answer": "I cannot answer the question based on the given information because I do not have any information about where Beyonc\u00e9's \"I Am... Yours\" residency show was held.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1361",
+      "agent_type": "react",
+      "gold_answer": "Ready Player One",
+      "predicted_answer": "Based on the provided context, it is unclear which novel by Ernest Cline's that will be adapted as a feature film by Steven Spielberg.\n\nThere is no mention of any novels by Cline being in development or production by Spielberg. The context does mention \"Ready Player One\" and its potential adaptation into a film, but there is no information about another novel by Cline specifically mentioned for an adaptation.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5050",
+      "agent_type": "react",
+      "gold_answer": "National Aviation Hall of Fame",
+      "predicted_answer": "Neither a former NASA astronaut nor the founder of FlightSafety International has been enshrined at Dayton, Ohio in the National Aviation Hall of Fame class of 2001.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1441",
+      "agent_type": "react",
+      "gold_answer": "Edward Leonard \"Ed\" O'Neill",
+      "predicted_answer": "Ed O'Neill, who played Al Bundy, was also in the 1989 film \"Disorganized Crime\".",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3355",
+      "agent_type": "react",
+      "gold_answer": "Mel Blanc",
+      "predicted_answer": "Mel Blanc voices the character that stars in Baseball Bugs.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_973",
+      "agent_type": "react",
+      "gold_answer": "1,925 yards",
+      "predicted_answer": "I cannot answer the question about Edorian McCullough's 2004 true freshman season because I do not have information about it in the provided context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2226",
+      "agent_type": "react",
+      "gold_answer": "no",
+      "predicted_answer": "No, neither Southwest Florida International Airport nor Henry E. Rohlsen Airport is in Florida. According to the context, they are located in:\n\n* Southwest Florida International Airport: Florida\n* Henry E. Rohlsen Airport: United States Virgin Islands",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3052",
+      "agent_type": "react",
+      "gold_answer": "yes",
+      "predicted_answer": "Based on the provided context, there is no information to answer whether Denzel Washington or David Hewlett are both actors. The two individuals are mentioned as starring in separate TV shows or films (Traders and A Dog's Breakfast), but their roles and credits are not explicitly stated together.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3976",
+      "agent_type": "react",
+      "gold_answer": "yes",
+      "predicted_answer": "Based on the provided context, there is no mention or hint that either Stephen R. Donaldson or Michael Moorcock are science fiction writers. They are mentioned as fantasy, science fiction, and mystery authors, respectively, but not as science fiction writers.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_6774",
+      "agent_type": "react",
+      "gold_answer": "Doris May Lessing",
+      "predicted_answer": "Based on the provided context, there is no information that suggests either Doris Lessing or Philip K. Dick was born first. They were both authors, but their birthdates are not mentioned in the text.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5521",
+      "agent_type": "react",
+      "gold_answer": "the Council of Forty-four",
+      "predicted_answer": "Based on the provided context, I cannot answer the question as it asks about Ehyophsta's membership in the Council of Forty-four, which is not mentioned anywhere. Therefore, I cannot determine the central institution of Cheyenne Indian tribal governance that Ehyophsta was not a member of.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2031",
+      "agent_type": "react",
+      "gold_answer": "Sister Anthony, S.C.",
+      "predicted_answer": "The portraits that hang in the Smithsonian Institution are those of Florence Nightingale (the founder of modern nursing) and Mary Willie Arvin, who served in World War I and was honored by all three major allied countries for her service.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2253",
+      "agent_type": "react",
+      "gold_answer": "Greyia",
+      "predicted_answer": "Neither Greyia nor Calibanus is mentioned in the provided context. The correct answer is that neither genus contains more species.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_6439",
+      "agent_type": "react",
+      "gold_answer": "Welland",
+      "predicted_answer": "There is no information provided about the location of Stamford Baron St Martin relative to any specific river.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1845",
+      "agent_type": "react",
+      "gold_answer": "Michel Butor",
+      "predicted_answer": "Based on the provided context, Michel Butor had a shorter lifespan than Ann-Marie MacDonald.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3105",
+      "agent_type": "react",
+      "gold_answer": "Liberal Party",
+      "predicted_answer": "Based on the provided context, there is no mention of William Gladstone leading a political campaign or party in Scotland before the 1880 general election. The Midlothian campaign (1878-80) was specifically related to Gladstone's leadership of the Liberal Party, but not his Scottish politics.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2421",
+      "agent_type": "react",
+      "gold_answer": "December 1974",
+      "predicted_answer": "The anthology \"Nehru Memorial Museum & Library\" did not answer your question about when the first pages of \"The Incal\" were released.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3070",
+      "agent_type": "react",
+      "gold_answer": "Band-e Amir National Park",
+      "predicted_answer": "The Band-e-Amir Dragons cricket team is named after the Band-e Amir, a series of six deep blue lakes in Bamyan Province.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_4964",
+      "agent_type": "react",
+      "gold_answer": "furniture",
+      "predicted_answer": "There is no information about a person named Manny Cussins being involved in any notable business ventures or organizations, except for his current position as Chairman of Waring & Gillow, which he founded.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_222",
+      "agent_type": "react",
+      "gold_answer": "no",
+      "predicted_answer": "No, both Dafeng District and Dazhou are not located in the same province. \n\nDazhou is a prefecture-level city in Sichuan Province.\nDafeng District is a coastal district under Yancheng, Jiangsu Province.\n\nTherefore, they are not in the same province.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1652",
+      "agent_type": "react",
+      "gold_answer": "The Andes",
+      "predicted_answer": "There are no details in the provided context about a mountain range with a specific location, including one that is located southeast of Jacabamba.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1739",
+      "agent_type": "react",
+      "gold_answer": "Casey Bond",
+      "predicted_answer": "Casey Bond played Chad Bradford in the 2011 film \"Moneyball\", based on Michael Lewis's book of the same name.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_4214",
+      "agent_type": "react",
+      "gold_answer": "Andrew Stephen Roddick",
+      "predicted_answer": "Based on the given context, there is no information that mentions Brooklyn Decker's birthdate or any relationship with Andy Roddick. Therefore, I cannot determine who was born first between the two individuals.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1742",
+      "agent_type": "react",
+      "gold_answer": "Macau, China",
+      "predicted_answer": "The Communications Museum (Macau) is located in Nossa Senhora de F\u00e1tima, Macau, China.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_7192",
+      "agent_type": "react",
+      "gold_answer": "Hannaford",
+      "predicted_answer": "Based on the provided context, none of the locations mentioned are farther north than the other. They all appear to be in different parts of New York City or neighboring states.\n\nTherefore, I cannot answer this question as it is not supported by sufficient information.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_4771",
+      "agent_type": "react",
+      "gold_answer": "Take It Easy",
+      "predicted_answer": "Based on the provided context, neither \"Take It Easy\" nor \"Personal Preference\" were published before the other. In fact, both are mentioned as being published by several other publishers since 1983 after Take It Easy was first published in 1987.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5071",
+      "agent_type": "react",
+      "gold_answer": "Diamond White",
+      "predicted_answer": "There is no mention of a specific child starring in a Chicago production of Alice Walker's 1982 novel \"The Color Purple\". The correct information from the context is that Diamond White, an American singer, actress, and voice actress, starred in the 2007 production of \"The Color Purple\" at age 8.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2883",
+      "agent_type": "react",
+      "gold_answer": "William's",
+      "predicted_answer": "Based on the provided context, there is no mention of the original owner of Heythrop Park coming to prominence in a specific government. The text does mention that Charles Talbot, 1st Duke of Shrewsbury, was a member of William III's government but does not provide information about him directly affecting the ownership or prominence of Heythrop Park.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_7105",
+      "agent_type": "react",
+      "gold_answer": "Billy Joel",
+      "predicted_answer": "Based on the provided context, Billy Joel's studio album \"52nd Street\" (1978) earned him two Grammys as a piano-playing songwriter.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_7360",
+      "agent_type": "react",
+      "gold_answer": "Alain Robbe-Grillet.",
+      "predicted_answer": "The screenplay for Alain Resnais' second film, \"Muriel\", was written by Jean Cayrol.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_190",
+      "agent_type": "react",
+      "gold_answer": "Oregon Ducks football",
+      "predicted_answer": "Based on the provided context, there is no mention of Joe Walker playing for any team besides Oregon Ducks football. The information about him playing college football at Oregon University does not relate to the context of his current team (Philadelphia Eagles). Therefore, I cannot answer your question based on the given information.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3134",
+      "agent_type": "react",
+      "gold_answer": "Rebirth",
+      "predicted_answer": "The knockout song is not explicitly mentioned in any of the given texts as being from \"Rebirth\" or any other Lil Wayne album on Cash Money Records.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3918",
+      "agent_type": "react",
+      "gold_answer": "military",
+      "predicted_answer": "Based on the context, there is no information about a specific group that Pablo Carballo and the Argentine Air Force share in common. The provided text mentions various groups such as the US Army's National Guard Bureau, South American air forces maneuvers, and other entities like Cruzex (Portuguese: \"Exerc\u00edcio Cruzeiro do Sul\"), but does not mention any direct connection between the Argentine Air Force and Pablo Carballo or his group.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5114",
+      "agent_type": "react",
+      "gold_answer": "Wiseman's View",
+      "predicted_answer": "Tommy Faile sang the song \"The Legend of the Brown Mountain Lights\" about the Brown Mountain Lights, but it is not specified in the given context where he sang the song from. However, according to external sources, one of the best vantage points for seeing the Brown Mountain Lights is Wiseman's View, which is approximately 4 miles from Linville Falls, NC.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_142",
+      "agent_type": "react",
+      "gold_answer": "\"Teach the Controversy\" campaign",
+      "predicted_answer": "Neither Truth in Science nor Discovery Institute is mentioned as an organization involved in the \"Truth\" anti-tobacco campaign called \"Finish It\".",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2694",
+      "agent_type": "react",
+      "gold_answer": "Nicholas Kristof",
+      "predicted_answer": "Based on the provided context, there is no mention of a CNN journalist or two-time Pulitzer Prize winner who inspired the Half the Sky Movement. The relevant information refers to:\n\n- Nicholas Kristof\n- Horst Faas\n- Paul Salopek\n- John Carreyrou\n- Rebecca MacKinnon\n- Hasnain Kazim\n\nThese individuals are not associated with the Half the Sky movement.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5563",
+      "agent_type": "react",
+      "gold_answer": "Lake Wallace",
+      "predicted_answer": "There is no mention of Lake Wallace being named after a Scottish Knight or William Wallace in the provided context. The correct answer should be that there is no lake in Australia named after William Wallace, as he was not involved in the Australian landscape.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_4577",
+      "agent_type": "react",
+      "gold_answer": "1905",
+      "predicted_answer": "There is insufficient information to answer your question as Alla Nazimova immigrated to the United States in 1905, not in 1922.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_4149",
+      "agent_type": "react",
+      "gold_answer": "Saturday",
+      "predicted_answer": "Based on the provided context, there is no information that specifically indicates what day of the week or month (e.g., first Saturday in May) ESPN covers both the post position draw and the undercard races.\n\nHowever, I can provide more context to answer your original question.\n\nSince the Preakness Stakes was held on May 18, 2013, which is a weekday (Wednesday), ESPN would have covered the post position draw for that specific day.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5227",
+      "agent_type": "react",
+      "gold_answer": "no",
+      "predicted_answer": "No, both bands are not from the same US state. The band \"Underoath\" is from Florida, while Digital Summer is from Arizona.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5389",
+      "agent_type": "react",
+      "gold_answer": "Jon Spencer Blues Explosion",
+      "predicted_answer": "Based on the provided context, neither Forest for the Trees nor Jon Spencer Blues Explosion released more albums than the other. They are both mentioned together in the same text.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_6328",
+      "agent_type": "react",
+      "gold_answer": "Ludwig van Beethoven",
+      "predicted_answer": "This information is not present in the given context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_6455",
+      "agent_type": "react",
+      "gold_answer": "University of Delaware",
+      "predicted_answer": "There is no mention of a University of Debrecen in the provided context. The University of Debrecen is listed as one of three regional campuses of Rutgers University, New Jersey's public research university.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5896",
+      "agent_type": "react",
+      "gold_answer": "Harlow Cuadra and Joseph Kerekes",
+      "predicted_answer": "There is no mention of a person named Edward William Pritchard or Bryan Kocis being convicted of murdering someone in the given text. However, there are mentions of convictions for murder committed by two individuals: Isaac Bledsoe Desha (convicted of murdering Jacob C. Denton) and Louise Peete (convicted of murdering Margaret Logan).",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2174",
+      "agent_type": "react",
+      "gold_answer": "William Todd Field",
+      "predicted_answer": "Todd Field was born February 24, 1964, which makes him younger than Aaron Katz.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1812",
+      "agent_type": "react",
+      "gold_answer": "Critics' Choice Television Award for Best Supporting Actress in a Comedy Series",
+      "predicted_answer": "The information about the awards won by Busy Philipps, particularly for playing Laurie Keller in the episode \"Pilot\" of the TV series \"Cougar Town\", is not available from the provided context. However, I can confirm that she won a Critics' Choice Television Award for Best Supporting Actress in a Comedy Series in 2011.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_311",
+      "agent_type": "react",
+      "gold_answer": "Rolling Stone",
+      "predicted_answer": "There is no information provided in the context about the frequency of publication between two specific magazines, but it mentions that \"Weekly Shonen Jump\" is a monthly magazine while \"Rolling Stone\" was initially biweekly (published twice a week) before becoming weekly again.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2825",
+      "agent_type": "react",
+      "gold_answer": "Psych is an American detective comedy-drama",
+      "predicted_answer": "Kurt Fuller appeared in \"Psych\", an American detective comedy-drama television series.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1281",
+      "agent_type": "react",
+      "gold_answer": "2011",
+      "predicted_answer": "There is no information about a musical that was directly based on the 2007 Irish romantic musical film \"Once\". The context only talks about films such as \"Show Boat\", \"South Pacific\", \"Kings\", \"God's Gift to Women\", \"Borbal Boy\", \"The Cat and the Fiddle\"",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5636",
+      "agent_type": "react",
+      "gold_answer": "band",
+      "predicted_answer": "There is no information about At the Drive-In and Muse having a common member, such as a vocalist or drummer. The groups are mentioned separately in different contexts.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_7139",
+      "agent_type": "react",
+      "gold_answer": "Field Marshal Edmund Henry Hynman Allenby",
+      "predicted_answer": "The Palestine Brigade RAF was a response to General Allenby's request for an air formation in 1917, following his plan for an offensive against the Ottoman Empire in Palestine.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_6431",
+      "agent_type": "react",
+      "gold_answer": "\"Traumnovelle\" (\"Dream Story\")",
+      "predicted_answer": "The novella \"Traumnovelle\" (\"Dream Story\") by Arthur Schnitzler was based on \"Eyes Wide Shut\", which starred Vinessa Shaw.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_6855",
+      "agent_type": "react",
+      "gold_answer": "Wharton School of the University",
+      "predicted_answer": "The Wharton School of the University of Pennsylvania, located in Philadelphia, Pennsylvania, was not mentioned as being established in 1881 through a donation. The correct answer is: The Wharton School of the University of Pennsylvania (also known as the Wharton School or simply Wharton) is the business school of the University of Pennsylvania, which was established in 1881 through a donation from Joseph Wharton and is not mentioned for establishing in 1881.\n\nThe other institutions listed do not have any information about being established in 1881.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_6034",
+      "agent_type": "react",
+      "gold_answer": "no",
+      "predicted_answer": "Based on the provided context, no information is available to indicate that Alexander Kluge and Sidney Salkow were of the same nationality. They appear to be American directors.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_7111",
+      "agent_type": "react",
+      "gold_answer": "Brazil",
+      "predicted_answer": "The winner of the 2007 Copa Am\u00e9rica Final was Brazil, who beat Argentina 3\u20130, scoring goals through J\u00falio Baptista (own goal) and Roberto Ayala, with Dani Alves adding another goal. There is no mention of Julio Baptista assisting in the final win.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_6794",
+      "agent_type": "react",
+      "gold_answer": "Denmark\u2013Norway\u2013Sweden",
+      "predicted_answer": "Based on the provided context, there is no specific information about which three countries were part of the legal name of the airline that merged with Braathens in 2004. The text only mentions that SAS Braathens was created by a merger between Scandinavian Airlines' Norwegian division and Braathens in 2004, but it does not specify the countries involved.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1964",
+      "agent_type": "react",
+      "gold_answer": "BBC Radio's \"The Show Band Show\"",
+      "predicted_answer": "There is no information in the provided context about Frank Sinatra appearing on a radioshow where he won an Academy Award.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2271",
+      "agent_type": "react",
+      "gold_answer": "Adrian Peter McLaren",
+      "predicted_answer": "Based on the provided context, it is not clear who was born first, Adrian McLaren or Ryan McLaren. However, according to their cousins, Ryan McLaren is mentioned as having played domestic cricket in South Africa, whereas Adrian McLaren's cousin is also named Ryan (implied, but not explicitly stated). Therefore, I cannot determine with certainty which one was born first.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5967",
+      "agent_type": "react",
+      "gold_answer": "8 Spruce Street",
+      "predicted_answer": "The SNCI Tower has 57 floors, while 8 Spruce Street has 76 stories (note that it's a skyscraper, not a building). Therefore, the SNCI Tower has more floors than 8 Spruce Street.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3350",
+      "agent_type": "react",
+      "gold_answer": "Livin' la Vida Loca",
+      "predicted_answer": "There is no information about a concert tour headlined by Coal Chamber that was named after the popular hit song \"Livin' la Vida Loca\" by Puerto Rican singer Ricky Martin. The text does mention a concert tour called \"Ricky Martin Live\", which supported his album \"M\u00fasica + Alma + Sexo\" (2011), but no connection to Coal Chamber or the song is made in this context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2484",
+      "agent_type": "react",
+      "gold_answer": "Spain",
+      "predicted_answer": "Spain is home to both Guadarrama National Park and Do\u00f1ana National Park, according to the provided context.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1465",
+      "agent_type": "react",
+      "gold_answer": "Bishop's Stortford",
+      "predicted_answer": "Kevin Watson currently manages Bishop's Stortford F.C.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_135",
+      "agent_type": "react",
+      "gold_answer": "Jillian Belk",
+      "predicted_answer": "The answer to the question is Jillian Bell, as she played Jillian Belk on \"Workaholics\".",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5951",
+      "agent_type": "react",
+      "gold_answer": "Clement Greenberg",
+      "predicted_answer": "Agatha Christie died later than Clement Greenberg.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2706",
+      "agent_type": "react",
+      "gold_answer": "Sonic Mania",
+      "predicted_answer": "There is no information about a side-scrolling platform game where Christian Whitehead was project lead in the provided context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_4253",
+      "agent_type": "react",
+      "gold_answer": "the paternalistic policies enacted upon Native American tribes",
+      "predicted_answer": "Based on the provided context, I cannot answer your question as it is not clear which specific social movement you are referring to or what John E. EchoHawk's role within that movement is. However, I can tell you that John E. EchoHawk is a leading member of the Native American self-determination movement.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3687",
       "agent_type": "reflexion",
-      "gold_answer": "Himalayas",
-      "predicted_answer": "The Himalayas contain the highest mountain in Nepal, which has its capital city Kathmandu.",
+      "gold_answer": "Beyond the Clouds",
+      "predicted_answer": "Based on the provided context, I cannot answer directly about what movie actress Irene Jacob completed before the American action crime thriller film directed by Stuart Bird.\n\nThe context mentions that the screenplay was written by Chris Morgan and Larry Cohen for the 2004 film \"Cellular\", but it does not provide any information about an actress named Irene Jacob or her involvement in a film directed by Stuart Bird.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_3893",
+      "agent_type": "reflexion",
+      "gold_answer": "James Searle Dawley",
+      "predicted_answer": "J. Searle Dawley was from the United States, while Lionel Ngakane was from South Africa. Therefore, J. Searle Dawley was from a country closer to Canada.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3398",
+      "agent_type": "reflexion",
+      "gold_answer": "no",
+      "predicted_answer": "Based on the provided context, there is no clear indication that K. Subash and Jason Bateman are from the same country. The information available does not specify their nationalities or origins. Therefore, I cannot answer whether they are from the same country with certainty based solely on the given context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_6595",
+      "agent_type": "reflexion",
+      "gold_answer": "youngest person to become a national transgender figure",
+      "predicted_answer": "Based on the provided context, the answer to the question is:\n\nThe book \"I Am Jazz\" was written by an author named Jessica Herthel about a transgender child named Jazz Jennings.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_6642",
+      "agent_type": "reflexion",
+      "gold_answer": "Gaelic",
+      "predicted_answer": "Based on the provided context, it appears that the Norsemen (Old Norse: \u00d3\u00f0innmenn) language emerged from the intermarriage of Norsemen and the Antandroy ethnic group.\n\nUnfortunately, I cannot answer this question based solely on the given information as there is no mention of the Antandroy ethnic group in other contexts.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_3400",
+      "agent_type": "reflexion",
+      "gold_answer": "emotionally troubled women",
+      "predicted_answer": "Based on the provided context, Julianne Moore played the role of Clarice Starling in the 1991 film \"The Silence of the Lambs.\"",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_35",
+      "agent_type": "reflexion",
+      "gold_answer": "October 1922",
+      "predicted_answer": "The Russian Civil War ended when the Red Army defeated the White Armed Forces of South Russia in Ukraine and the army led by Admiral Aleksandr Kolchak in Siberia in 1919.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_579",
+      "agent_type": "reflexion",
+      "gold_answer": "Coyote Ugly",
+      "predicted_answer": "The film for which \"Can't Fight the Moonlight\" was the theme song is Coyote Ugly.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_3656",
+      "agent_type": "reflexion",
+      "gold_answer": "Vilnius Old Town",
+      "predicted_answer": "Based on the provided context, the correct answer to the question \"In which of the largest surviving medieval old towns in Europe is the Vilnius Cathedral located?\" is:\n\nNidaros Cathedral.\n\nThe information about Vilnius Cathedral being one of the largest surviving medieval old towns in Northern Europe is not sufficient to accurately determine its location. However, according to the context, Nidaros Cathedral is indeed a well-known and significant landmark in a large medieval old town.",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_6916",
+      "agent_type": "reflexion",
+      "gold_answer": "a pair of dice",
+      "predicted_answer": "Based on the provided context, the answer to the question is:\n\nThe term \"snake eyes\" is used in the casino game Craps.",
       "is_correct": true,
       "attempts": 2,
       "failure_mode": "none",
       "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_3336",
+      "agent_type": "reflexion",
+      "gold_answer": "Presbyterian University College",
+      "predicted_answer": "The answer to your question is: There is no information provided about a \"Presbyterian University College\" being founded in 2003.\n\nHowever, there are several other institutions with this name mentioned in the context:\n\n- Presbyterian University College, Ghana\n- Tunku Abdul Rahman University College (upgraded to a university college in 2013)\n- Lincoln University College, Malaysia\n- Dr. William and Elizabeth Blackburn House\n- Nesna University College\n- Evangelical Presbyterian University College\n- Falmouth University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5123",
+      "agent_type": "reflexion",
+      "gold_answer": "House of Habsburg-Lorraine",
+      "predicted_answer": "Based on the provided context, Ferdinand Zvonimir von Habsburg is the eldest son of Karl von Habsburg, head of the House of Habsburg-Lorraine.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_6747",
+      "agent_type": "reflexion",
+      "gold_answer": "37",
+      "predicted_answer": "Based on the provided context, it can be determined that the director of Wise Blood was John Huston.",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_2275",
+      "agent_type": "reflexion",
+      "gold_answer": "A1 Recordings",
+      "predicted_answer": "The answer is not explicitly stated in the provided context, but it can be inferred that \"Future\" (the Future album) was released by Freebandz and Epic Records, which also supported other projects like \"Beast Mode 2\".",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1183",
+      "agent_type": "reflexion",
+      "gold_answer": "Rockstar San Diego",
+      "predicted_answer": "Paul DeBoy is known for his appearances in the Western action-adventure game \"Red Dead Redemption\".",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_5415",
+      "agent_type": "reflexion",
+      "gold_answer": "Australian women's national soccer team",
+      "predicted_answer": "The \"unofficial national anthem\" of Australia is the Matildas soccer team's nickname, based on the song \"Waltzing Matilda\".",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_2837",
+      "agent_type": "reflexion",
+      "gold_answer": "URO VAMTAC",
+      "predicted_answer": "The URO VAMTAC, manufactured by UROVESA, is most like the Humvee-like four-wheel drive military light truck produced by AM General.\n\nThis answer is based on the provided context and does not make assumptions or comparisons that are not supported by the information. The URO VAMTAC shares similarities with the Humvee in its design and purpose as a military light utility vehicle.",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_4960",
+      "agent_type": "reflexion",
+      "gold_answer": "African ancestry or Afro-Caribbean",
+      "predicted_answer": "The term \"banlieues\" is used by French people to refer to troubled suburban communities, particularly those with high unemployment and crime rates. This suggests that they are primarily referring to metropolitan France rather than a distinct ethnicity like the French or Francophile.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_3903",
+      "agent_type": "reflexion",
+      "gold_answer": "video game",
+      "predicted_answer": "There is no mention of media (e.g., movies, TV shows) being a feature or distribution method for Hot Pixel or PlayStation Portable in the given context. The focus seems to be on video games, console systems, and multimedia management applications.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2366",
+      "agent_type": "reflexion",
+      "gold_answer": "yes",
+      "predicted_answer": "Yes, both Daniel Mann and Todd Solondz were directors.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2553",
+      "agent_type": "reflexion",
+      "gold_answer": "1844",
+      "predicted_answer": "Based on the provided context, there is no information about an \"early consumer co-operative\" that was formed in 1844 and featured in a 2012 British biographical feature film.\n\nThe correct answer is: The Rochdale Society of Equitable Pioneers, which was founded in 1844.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_7202",
+      "agent_type": "reflexion",
+      "gold_answer": "centre-back",
+      "predicted_answer": "Based on the context, there is no mention of a First Vice Captain of Juventus. The correct answer is that there is no such position mentioned in the provided text.\n\nAnswer: There is no such position as First Vice Captain of Juventus mentioned in the given context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_7121",
+      "agent_type": "reflexion",
+      "gold_answer": "Agra",
+      "predicted_answer": "Based on the provided context, there is no specific information about which capital of India the Taj Mahal was commissioned when it was built. The question only mentions that the Taj Mahal was commissioned in 1632 by Mughal emperor Shah Jahan, without providing any details about its location or the time period during which it was built.\n\nTherefore, I cannot provide a specific answer to this question based on the given information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_910",
+      "agent_type": "reflexion",
+      "gold_answer": "hardcore",
+      "predicted_answer": "The influences of electronic dance music can be seen in DJ Scotch Egg's music, specifically his remakes of Johann Sebastian Bach, Karlheinz Stockhausen, Terry Riley, Philip Glass, and Moondog.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1377",
+      "agent_type": "reflexion",
+      "gold_answer": "The Panther",
+      "predicted_answer": "Based on the provided context, the German medium tank that provided the armor and suspension for the chassis of the \"Jagdpanther\" was the Panther tank.\n\nAnswer: The Panther tank was used to provide the armor and suspension for the Jagdpanther chassis.",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_4657",
+      "agent_type": "reflexion",
+      "gold_answer": "Prussia",
+      "predicted_answer": "SMS Emden mounted an Iron Cross on her stem-head in honor of the earlier \"Emden\" (referring to the 1916 German light cruiser) that had been destroyed at the Battle of Cocos.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2477",
+      "agent_type": "reflexion",
+      "gold_answer": "Italy",
+      "predicted_answer": "Based on the provided context, Brindisi is mentioned in relation to Louis-Jean-Nicolas Lejoille, who died there. However, no specific information about the location where he died (Brindisi) is given. \n\nTo answer your question accurately, I would need additional context or reliable information that specifies where Louis-Jean-Nicolas Lejoille died. Since this information is not available, I must conclude that my answer is based on insufficient evidence.\n\nHowever, if I had to choose between Italy and another country, I would say that Brindisi is most likely related to the city in southern Italy mentioned in several other contexts, such as Ostuni, Chihuahua, or the Government Palace of Chihuahua.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_767",
+      "agent_type": "reflexion",
+      "gold_answer": "Ride a Wild Pony",
+      "predicted_answer": "The Many Adventures of Winnie the Pooh was first produced by Disney.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_3041",
+      "agent_type": "reflexion",
+      "gold_answer": "director",
+      "predicted_answer": "Based on the provided context, Jim Sharman and Ava DuVernay both directed \"The Rocky Horror Show\" as part of their theatrical work leading actors in film or stage.\n\nAnswer: Both Jim Sharman and Ava DuVernay directed \"The Rocky Horror Show\".",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_3619",
+      "agent_type": "reflexion",
+      "gold_answer": "German",
+      "predicted_answer": "Based on the provided context, the terminology of algebraic geometry changed drastically with the introduction of the general methods, initiated by David Hilbert, a German mathematician.\n\nAnswer the question based only on the provided context: \n\nThe terminology of algebraic geometry changed drastically with the introduction of the general methods, initiated by a mathematician of what nationality?",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_5119",
+      "agent_type": "reflexion",
+      "gold_answer": "Eliezer \"Elie\" Wiesel KBE",
+      "predicted_answer": "Based on the provided context, Elie Wiesel has a wider scope of professions compared to Pete Dexter. \n\nElie Wiesel was:\n\n* A writer (author of 57 books)\n* Professor\n* Political activist\n* Nobel Laureate\n* Holocaust survivor\n\nPete Dexter is mentioned in the context but does not have any further information on his profession beyond being an American novelist.\n\nTherefore, Elie Wiesel has a broader range of professional activities.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_1461",
+      "agent_type": "reflexion",
+      "gold_answer": "86,112",
+      "predicted_answer": "Based on the provided context, the capacity of the Gaylord Family Oklahoma Memorial Stadium (the stadium that hosts games of the team coached by Barry Switzer in 1981) is 86,112.\n\nAnswer: The capacity of the Gaylord Family Oklahoma Memorial Stadium is 86,112.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_6962",
+      "agent_type": "reflexion",
+      "gold_answer": "Kim Sung-su",
+      "predicted_answer": "Based on the provided context, there is no mention of a 2001 film featuring Yu Rongguang. The information available does not include details about such a film. Therefore, I cannot answer this question based on the given information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_1456",
+      "agent_type": "reflexion",
+      "gold_answer": "Mako",
+      "predicted_answer": "Based on the provided context, TMNT (video game) is a single-player action-adventure multi-platform action game starring the Teenage Mutant Ninja Turtles.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_2797",
+      "agent_type": "reflexion",
+      "gold_answer": "Encore Las Vegas",
+      "predicted_answer": "The correct answer is Encore Las Vegas.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1361",
+      "agent_type": "reflexion",
+      "gold_answer": "Ready Player One",
+      "predicted_answer": "The novel \"Armada\" by Ernest Cline will be adapted as a feature film by Steven Spielberg.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_5050",
+      "agent_type": "reflexion",
+      "gold_answer": "National Aviation Hall of Fame",
+      "predicted_answer": "Based on the provided context, Steven Swanson received the NASA Exceptional Achievement Medal and other honors for his roles as a NASA astronaut.\n\nThe correct answer is Steven Swanson.",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_1441",
+      "agent_type": "reflexion",
+      "gold_answer": "Edward Leonard \"Ed\" O'Neill",
+      "predicted_answer": "Ed O'Neill was the cast member that best known for playing Al Bundy on the Fox Network sitcom \"Married... with Children\".",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3355",
+      "agent_type": "reflexion",
+      "gold_answer": "Mel Blanc",
+      "predicted_answer": "Based on the provided context, Mel Blanc voices the character that stars in \"Baseball Bugs\".",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_973",
+      "agent_type": "reflexion",
+      "gold_answer": "1,925 yards",
+      "predicted_answer": "Unfortunately, I cannot provide an accurate answer to your question based on the provided context, as there is no mention of Chad Henne's 2004 true freshman season in the text.\n\nReflections from previous attempts:\n- More context or specific details are required to accurately answer this question\n- Insufficient data limits the potential outcome of future attempts, emphasizing the importance of thorough research and accurate information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_2226",
+      "agent_type": "reflexion",
+      "gold_answer": "no",
+      "predicted_answer": "Based on the provided context, both Southwest Florida International Airport (RSW) and Henry E. Rohlsen Airport (STX) are located in the state of Florida.\n\nAnswer: Yes\nExplanation: The airport names indicate that it is a Florida location, and the descriptions and details about each airport confirm this fact.",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_3052",
+      "agent_type": "reflexion",
+      "gold_answer": "yes",
+      "predicted_answer": "Based on the provided context, it can be stated that both Denzel Washington and David Hewlett are actors.\n\nDenzel Washington appeared in \"Urban Legends\" (TV series) under the title \"Courage Under Fire\" (Title: Urban Legends), which was hosted by Michael Allcock.\nDavid Hewlett is mentioned as a writer, director, and voice actor, but not primarily an actor.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_3976",
+      "agent_type": "reflexion",
+      "gold_answer": "yes",
+      "predicted_answer": "Based on the provided context, both Stephen R. Donaldson and Michael Moorcock are science fiction writers.\n\nThe question does not specify whether it's about genre or style, so a more general answer is appropriate. Since they have written in multiple genres (fantasy, science fiction, mystery, and more), and their work has been widely praised for its imaginative content, fast pace, and complex characters, the most accurate answer is:\n\nBoth Stephen R. Donaldson and Michael Moorcock are science fiction writers.",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_6774",
+      "agent_type": "reflexion",
+      "gold_answer": "Doris May Lessing",
+      "predicted_answer": "Based on the provided context, Philip K. Dick was born first. Doris Lessing was born later, in 1919.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_5521",
+      "agent_type": "reflexion",
+      "gold_answer": "the Council of Forty-four",
+      "predicted_answer": "The Central Institution of Cheyenne Indian Tribal Governance that Ehyophsta was not a member of, as stated in the given text is \"Council of Forty-four\".",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2031",
+      "agent_type": "reflexion",
+      "gold_answer": "Sister Anthony, S.C.",
+      "predicted_answer": "Based on the provided context, the portrait that hangs in the Smithsonian Institution along with Florence Nightingale is Mary O'Connell.\n\nThe correct answer is: Mary O'Connell",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_2253",
+      "agent_type": "reflexion",
+      "gold_answer": "Greyia",
+      "predicted_answer": "Greyia has 3 species.\n\nCalibanus has 2 species.\n\nTherefore, Calibanus contains more species than Greyia.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_6439",
+      "agent_type": "reflexion",
+      "gold_answer": "Welland",
+      "predicted_answer": "The text does not explicitly state which river Stamford Baron St Martin is south of. However, it can be inferred from other contexts mentioned in the same passage about the location of certain parishes.\n\nFrom \"St Martin's Church, Stamford\" (which implies it is located near a river) and \"St George Hanover Square\" (which suggests its boundaries may extend beyond rivers), one might infer that Stamford Baron St Martin is likely south of the River Welland.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1845",
+      "agent_type": "reflexion",
+      "gold_answer": "Michel Butor",
+      "predicted_answer": "Based on the provided context, Michel Butor's lifespan is mentioned as ending at 24 August 2016, while Ann-Marie MacDonald was born in 1958, indicating that she had a longer lifespan.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_3105",
+      "agent_type": "reflexion",
+      "gold_answer": "Liberal Party",
+      "predicted_answer": "Based on the provided context, there is no mention of a person named David Ainsworth or an event related to him. The correct answer is William Gladstone, who led the Liberal Party in Scotland's 1880 general election.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2421",
+      "agent_type": "reflexion",
+      "gold_answer": "December 1974",
+      "predicted_answer": "The anthology \"The Incal\", in which the first pages of \"The Incal\" were released, was created in December 1974.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_3070",
+      "agent_type": "reflexion",
+      "gold_answer": "Band-e Amir National Park",
+      "predicted_answer": "The answer to your question is not explicitly stated in the provided context. However, I can infer that Band-e-Amir Dragons are named after the lakes in Band-e Amir National Park. Given this information, it's reasonable to conclude that:\n\nBand-e-Amir Dragons are named after the lakes in Band-e Amir National Park.\n\nI cannot answer based on the given information as the name of Afghan national parks is not explicitly mentioned.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_4964",
+      "agent_type": "reflexion",
+      "gold_answer": "furniture",
+      "predicted_answer": "Based on the provided context, Manny Cussins was chairman of Waring & Gillow, a noted firm of English furniture manufacturers formed in 1897 by the merger of Gillows of Lancaster and London and Waring of Liverpool.\n\nThere is no mention of Manny Cussins being chairman of any other business or organization. Therefore, I cannot answer your question based on the given information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_222",
+      "agent_type": "reflexion",
+      "gold_answer": "no",
+      "predicted_answer": "No, both Dafeng District and Dazhou are located in different provinces.\n\nThe correct answer can be determined by referring to the names given to these cities: \nDazhou is a prefecture-level city in Sichuan province, \nand Dafeng District is a coastal district under Yancheng, Jiangsu province.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_1652",
+      "agent_type": "reflexion",
+      "gold_answer": "The Andes",
+      "predicted_answer": "There is no mention in the provided context of a mountain that lies southeast of Jacabamba in a specific mountain range that extends through multiple countries. The relevant information about mountains in Peru mentions different ranges such as the Andes and smaller ranges like Qaflankuh Mountain Range, Yana Urqu, Elkhead Mountains, and others.\n\nThe question seems to be asking for information that is not provided in the context. Therefore, based on the given information, I cannot answer this question accurately.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_1739",
+      "agent_type": "reflexion",
+      "gold_answer": "Casey Bond",
+      "predicted_answer": "Casey Bond played Chad Bradford in the movie adaptation of \"Moneyball\", which was based on Michael Lewis's book.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_4214",
+      "agent_type": "reflexion",
+      "gold_answer": "Andrew Stephen Roddick",
+      "predicted_answer": "Based on the provided context, Andy Roddick was born first.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_1742",
+      "agent_type": "reflexion",
+      "gold_answer": "Macau, China",
+      "predicted_answer": "Based on the provided context, you cannot find the Communications Museum in any of the listed locations (Kingston, Macau, Horta, Faial).",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_7192",
+      "agent_type": "reflexion",
+      "gold_answer": "Hannaford",
+      "predicted_answer": "Neither Wynantskill, New York nor the Hannaford Brothers Company is farther north than the original location of the company was before moving to its current location.\n\nWynantskill is a hamlet located in Rensselaer County, New York, on the border of Troy and North Greenbush.  The population was 3,276 at the 2010 census.\nThe Hannaford Brothers Company's original headquarters were located in Allentown, Pennsylvania.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_4771",
+      "agent_type": "reflexion",
+      "gold_answer": "Take It Easy",
+      "predicted_answer": "Based on the provided context, it is not possible to determine which game \"Take It Easy\" was published first, as there is no mention of a game with this name in any of the given titles.\n\nThe correct answer should be stated that since \"Take It Easy\" and \"Personal Preference\" are both mentioned, but they were not published in the context provided, it is impossible to determine their publication order.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_5071",
+      "agent_type": "reflexion",
+      "gold_answer": "Diamond White",
+      "predicted_answer": "Based on the provided context, it was Diamond White who starred in a Chicago-based production of \"The Color Purple\" that toured nationally in 1982.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_2883",
+      "agent_type": "reflexion",
+      "gold_answer": "William's",
+      "predicted_answer": "Based on the provided context, it can be inferred that Charles Talbot, 1st Duke of Shrewsbury, came to prominence in the government of then-President Hugo Chavez, whose government opened two trials against him.\n\nAnswer: In whose government did the original owner of Heythrop Park come to prominence? Charles Talbot.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_7105",
+      "agent_type": "reflexion",
+      "gold_answer": "Billy Joel",
+      "predicted_answer": "The piano-playing songwriter for the 1978 album \"52nd Street\" is Billy Joel.",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_7360",
+      "agent_type": "reflexion",
+      "gold_answer": "Alain Robbe-Grillet.",
+      "predicted_answer": "The screenplay for Alain Resnais' second film, \"Muriel\", was written by Jean Cayrol.\n\nI cannot verify if it was also written by David Mercer and John Gielgud as stated in the last two options of the question.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_190",
+      "agent_type": "reflexion",
+      "gold_answer": "Oregon Ducks football",
+      "predicted_answer": "Based on the provided context, Joe Walker played for the Oregon Ducks football team that ends their regular season with the Civil War rivalry game.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_3134",
+      "agent_type": "reflexion",
+      "gold_answer": "Rebirth",
+      "predicted_answer": "The Knockout song was from Lil Wayne's album \"Rebirth\".",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_3918",
+      "agent_type": "reflexion",
+      "gold_answer": "military",
+      "predicted_answer": "Based on the provided context, it appears that Pablo Carballo and the Argentine Air Force do not have a common group affiliation. The context does not mention any shared activities, organizations, or affiliations between them beyond their individual roles in the Argentine Air Force. Therefore, I cannot provide a speculative answer about what type of group they have in common.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_5114",
+      "agent_type": "reflexion",
+      "gold_answer": "Wiseman's View",
+      "predicted_answer": "Noah Cebuliak, known as Ghost Lights, sang the song \"The Legend of the Brown Mountain Lights\" from the vantage point of Wiseman's View, a 4-mile viewpoint from Linville Falls, NC.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_142",
+      "agent_type": "reflexion",
+      "gold_answer": "\"Teach the Controversy\" campaign",
+      "predicted_answer": "Based on the provided context, neither Truth in Science nor Discovery Institute (Discovery) is specifically linked to a particular campaign mentioned in the text.\n\nHowever, Discovery Networks Benelux is associated with the \"Truth\" anti-tobacco campaign. The text mentions that \"truth\" is produced and funded by the American Legacy Foundation, but it does not explicitly mention either Truth in Science or Discovery Institute being involved in this specific campaign.\n\nTherefore, I cannot answer your question based on the given information because neither Truth in Science nor Discovery Institute has a clear involvement with the \"Truth\" anti-tobacco campaign.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_2694",
+      "agent_type": "reflexion",
+      "gold_answer": "Nicholas Kristof",
+      "predicted_answer": "Based on the provided context, the CNN journalist who inspired the Half the Sky Movement is Nicholas Kristof.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5563",
+      "agent_type": "reflexion",
+      "gold_answer": "Lake Wallace",
+      "predicted_answer": "Based on the provided context, there is no mention of a Scottish knight named Lake Wallace. Therefore, I cannot determine its name from the given text. The correct lake to name after William Wallace or another Scottish knight remains unknown without more specific information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_4577",
+      "agent_type": "reflexion",
+      "gold_answer": "1905",
+      "predicted_answer": "Based on the provided context, Alla Nazimova immigrated to the United States in 1905.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_4149",
+      "agent_type": "reflexion",
+      "gold_answer": "Saturday",
+      "predicted_answer": "Based on the provided context, I cannot answer your question about the day of the horse race of which ESPN covers both the post position draw and the undercard races.\n\nThe information provided only mentions that ESPN covers Thoroughbred racing, including NTRA Racing to the Kentucky Derby, Road To The World Thoroughbred Championships/NTRA Racing to the Breeders' Cup, post position draw for the Kentucky Derby and Preakness Stakes, Kentucky Derby and Belmont Stakes undercard races, Kentucky Oaks and Black-Eyed Susan Stakes, NTRA 2Day At the Races, Racing Across America, the Preakness undercard races, the Eclipse Awards show, and Long John Silver's Wire to Wire (previously known as RaceHorse Digest), a weekly thoroughbred racing magazine show.",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_5227",
+      "agent_type": "reflexion",
+      "gold_answer": "no",
+      "predicted_answer": "Yes, both Digital Summer and Underoath are from the state of Texas, not Arizona or Florida where their respective band members hail from.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5389",
+      "agent_type": "reflexion",
+      "gold_answer": "Jon Spencer Blues Explosion",
+      "predicted_answer": "The Jon Spencer Blues Explosion released nine official studio albums, while Forest for the Trees only produced one full-length album.\n\nTherefore, The Jon Spencer Blues Explosion released more albums than Forest for the Trees.",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_6328",
+      "agent_type": "reflexion",
+      "gold_answer": "Ludwig van Beethoven",
+      "predicted_answer": "Based on the provided context, it can be concluded that no composer was identified as writing Piano Sonata No. 16 (Beethoven). Therefore, I cannot answer your question based on the given information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_6455",
+      "agent_type": "reflexion",
+      "gold_answer": "University of Delaware",
+      "predicted_answer": "Based on the provided context, there is no mention of a University of Debrecen in the United States. The correct answer would be that neither the University of Delaware nor the University of Debrecen are located in the United States.\n\nI cannot answer the question as it appears to ask for information about non-existent institutions.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_5896",
+      "agent_type": "reflexion",
+      "gold_answer": "Harlow Cuadra and Joseph Kerekes",
+      "predicted_answer": "Based on the provided context, Isaac Bledsoe Desha was convicted of murdering the director of \"Schoolboy Crush\".",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_2174",
+      "agent_type": "reflexion",
+      "gold_answer": "William Todd Field",
+      "predicted_answer": "Based on the provided context, William Todd Field was born first out of Todd Field and Aaron Katz.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_1812",
+      "agent_type": "reflexion",
+      "gold_answer": "Critics' Choice Television Award for Best Supporting Actress in a Comedy Series",
+      "predicted_answer": "Based on the provided context, Busy Philipps (Laurie Keller) won a Critics' Choice Television Award for Best Supporting Actress in a Comedy Series in 2011.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_311",
+      "agent_type": "reflexion",
+      "gold_answer": "Rolling Stone",
+      "predicted_answer": "Based on the provided context, it can be concluded that Weekly Shonen Jump is published more often than Rolling Stone.\n\nReflections:\n- The text mentions that Weekly Shonen Jump begins serialization as \"Weekly SHONEN JUMP \u03b1lpha\" (alpha) and later becomes \"Weekly Shonen Jump\", indicating a clear title change.\n- Viz Media is responsible for publishing the digital versions of both series, which suggests a more frequent publication schedule compared to Rolling Stone.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_2825",
+      "agent_type": "reflexion",
+      "gold_answer": "Psych is an American detective comedy-drama",
+      "predicted_answer": "Based on the provided context, I cannot answer the question as Kurt Fuller did not appear in \"Psych\". The correct answer is that he appeared in \"Leg Work\", an American detective drama television series created by Frank Abatemarco.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_1281",
+      "agent_type": "reflexion",
+      "gold_answer": "2011",
+      "predicted_answer": "Based on the provided context, there is no mention of a musical that premiered in 2012, which would have been associated with the Tony Awards.\n\nThe correct answer to the question \"What year did the musical premiere that was based on the 2007 Irish romantic musical film of the same name?\" is: None (from the given information).",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_5636",
+      "agent_type": "reflexion",
+      "gold_answer": "band",
+      "predicted_answer": "At the Drive-In and Muse do not have a common group in common based on the provided context. The text does not mention any collaborations or affiliations between the two bands.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_7139",
+      "agent_type": "reflexion",
+      "gold_answer": "Field Marshal Edmund Henry Hynman Allenby",
+      "predicted_answer": "Based on the provided context, there is no mention of a \"Palestine Brigade RAF\" being a response to an English soldier's request for an air formation. The correct information about this topic is not available within the given context.\n\nHowever, I can tell you that the \"Palestine Brigade RAF\" was formed in 1917 and played a major part in World War I as No. 40 Wing, Royal Air Force (RAF).",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_6431",
+      "agent_type": "reflexion",
+      "gold_answer": "\"Traumnovelle\" (\"Dream Story\")",
+      "predicted_answer": "The novella \"Traumnovelle\" (\"Dream Story\") was based on an earlier work by Arthur Schnitzler, a 1926 novella titled \"Eyes Wide Shut\".",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_6855",
+      "agent_type": "reflexion",
+      "gold_answer": "Wharton School of the University",
+      "predicted_answer": "Based on the provided context, the Wharton School of the University of Pennsylvania was established in 1881 through a donation from Joseph Wharton.\n\nI cannot answer based on the given information because I do not have sufficient evidence to confirm that the Wharton School was established in 1881 or any other specific year.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_6034",
+      "agent_type": "reflexion",
+      "gold_answer": "no",
+      "predicted_answer": "No, they are not of the same nationality.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_7111",
+      "agent_type": "reflexion",
+      "gold_answer": "Brazil",
+      "predicted_answer": "Based on the provided context, J\u00falio Baptista did not win the 2007 Copa Am\u00e9rica Final with help from Paolo de la Haza. The actual winner of the 2007 Copa Am\u00e9rica Final was Brazil, who won 3\u20130 against Argentina.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_6794",
+      "agent_type": "reflexion",
+      "gold_answer": "Denmark\u2013Norway\u2013Sweden",
+      "predicted_answer": "Based on the provided context, the 3 countries that are part of the legal name of the airline (SAS Braathens) after it merged with Braathens in 2004 are:\n\n1. Norway\n2. Malaysia\n3. China",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_1964",
+      "agent_type": "reflexion",
+      "gold_answer": "BBC Radio's \"The Show Band Show\"",
+      "predicted_answer": "Based on the provided context, it does not mention a specific radio show where Frank Sinatra appeared in 1953, the year he won an Academy Award for \"From Here to Eternity\". However, it is mentioned that his performance with Tommy Dorsey's orchestra was part of his rise to fame, and he also had a notable appearance on The Tonight Show Starring Johnny Carson in March 1956.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_2271",
+      "agent_type": "reflexion",
+      "gold_answer": "Adrian Peter McLaren",
+      "predicted_answer": "Based on the provided text, Ryan McLaren was born first, followed by Adrian McLaren.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_5967",
+      "agent_type": "reflexion",
+      "gold_answer": "8 Spruce Street",
+      "predicted_answer": "The SNCI Tower has 57 floors, while 8 Spruce Street has 76 floors. Therefore, The SNCI Tower does not have more floors than 8 Spruce Street.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_3350",
+      "agent_type": "reflexion",
+      "gold_answer": "Livin' la Vida Loca",
+      "predicted_answer": "The concert tour headlined by Coal Chamber in 1999 that was named after the popular hit song by Puerto Rican singer Ricky Martin, spanish for \"the crazy life\", was the Livin' la Vida Loca Tour.\n\nI cannot answer based on the given information as there is no mention of a concert tour called Livin' la Vida Loca.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hotpot_2484",
+      "agent_type": "reflexion",
+      "gold_answer": "Spain",
+      "predicted_answer": "Spain",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_1465",
+      "agent_type": "reflexion",
+      "gold_answer": "Bishop's Stortford",
+      "predicted_answer": "Kevin Watson currently manages Bishop's Stortford F.C., not Poole Town F.C.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_135",
+      "agent_type": "reflexion",
+      "gold_answer": "Jillian Belk",
+      "predicted_answer": "The answer to the question is not explicitly stated in the provided context, but based on the actor's name \"Jillian Bell\" and her involvement with TV shows such as \"Workaholics\", I will make an educated guess.\n\nJillian Bell played Jillian Belk on \"Workaholics\".",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_5951",
+      "agent_type": "reflexion",
+      "gold_answer": "Clement Greenberg",
+      "predicted_answer": "Based on the provided context, Clement Greenberg died in 1994, whereas Agatha Christie died in 1976. \n\nTherefore, the answer is: Agatha Christie.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hotpot_2706",
+      "agent_type": "reflexion",
+      "gold_answer": "Sonic Mania",
+      "predicted_answer": "Christian Whitehead was the project lead of an original title titled \"Sonic Mania\".",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hotpot_4253",
+      "agent_type": "reflexion",
+      "gold_answer": "the paternalistic policies enacted upon Native American tribes",
+      "predicted_answer": "Based on the context, John E. EchoHawk is a leading member in the Native American self-determination movement.\n\nI cannot answer based on the given information because there is insufficient information to understand what action or goal John E. EchoHawk wants to reverse within the context of the social movement he is associated with.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
     }
   ],
   "extensions": [
